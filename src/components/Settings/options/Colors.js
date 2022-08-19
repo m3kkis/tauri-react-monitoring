@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Typography, TextField, Stack, Chip } from '@mui/material'
+import { Stack, Chip } from '@mui/material'
 import SettingsLayout from '../layout/SettingsLayout'
 
 const Colors = ({ stateTSettings }) => {

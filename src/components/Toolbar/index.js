@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
 import { Grid } from '@mui/material'
 import { CPU, RAM, GPU, VRAM, Network } from './widgets'
 

@@ -6,7 +6,6 @@ import {
   availableMonitors,
   currentMonitor,
 } from '@tauri-apps/api/window'
-import { CPU, RAM, GPU, VRAM, Network } from '../components/Toolbar/widgets'
 
 const initialState = {
   SettingsWindow: 'setting_window',

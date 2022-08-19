@@ -10,18 +10,21 @@ import {
 } from '../../redux/ToolbarSettings'
 import { Grid, Paper, Button, Stack, Typography } from '@mui/material'
 import {
+  Presets,
   Monitors,
   MonitorsSkeleton,
   Positioning,
   Sizing,
   Widgets,
   Colors,
+  Others,
 } from './options'
 import SaveIcon from '@mui/icons-material/Save'
 import CloseIcon from '@mui/icons-material/Close'
 
 const Settings = () => {
   const dispatch = useDispatch()
+
   const stateTSettings = useSelector((state) => state.ToolbarSettings)
   const stateTSettingsMonitors = useSelector(
     (state) => state.ToolbarSettings.monitors,
@@ -70,6 +73,7 @@ const Settings = () => {
             Settings
           </Typography>
         </Grid>
+        <Presets />
         {renderMonitors()}
         <Positioning
           stateTSettings={stateTSettings}
@@ -84,13 +88,9 @@ const Settings = () => {
           handleWidgetsChanges={handleWidgetsChanges}
         />
         <Colors stateTSettings={stateTSettings} />
+        <Others />
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12} my={2}>
-          <Stack
-            direction="row"
-            justifyContent="space-between"
-            spacing={3}
-            mx={3}
-          >
+          <Stack direction="row" justifyContent="space-between" mx={2}>
             <Button
               size="small"
               variant="contained"
