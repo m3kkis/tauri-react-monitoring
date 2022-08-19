@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
-
+import React, { useState, useRef } from 'react'
 import { Stack, Typography, Button } from '@mui/material'
 import SettingsLayout from '../layout/SettingsLayout'
 import FileUploadIcon from '@mui/icons-material/FileUpload'
 import HistoryIcon from '@mui/icons-material/History'
 
 const Presets = () => {
+  const inputFile = useRef(null)
   const [filename, setFilename] = useState('No file selected ...')
+
+  const onClickUpload = () => inputFile.current.click()
+
   return (
     <SettingsLayout title="Presets">
       <Stack
@@ -24,7 +27,18 @@ const Presets = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Button variant="contained" size="small" endIcon={<FileUploadIcon />}>
+          <input
+            type="file"
+            id="file"
+            ref={inputFile}
+            style={{ display: 'none' }}
+          />
+          <Button
+            variant="contained"
+            size="small"
+            endIcon={<FileUploadIcon />}
+            onClick={onClickUpload}
+          >
             LOAD
           </Button>
           <Button
